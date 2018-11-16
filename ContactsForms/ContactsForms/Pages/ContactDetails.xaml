@@ -11,7 +11,7 @@
                         <Image Aspect="AspectFill" Source="{Binding Picture.GetImageUri}"/>
                     </Grid>
                 </Frame>
-                <Label Text="{Binding FullName}" FontSize="24" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
+                <Label Text="{Binding FullTitledName}" FontSize="24" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
                 <StackLayout Padding="16, 0, 0, 20">
                     <Label Text="Телефон" FontSize="15" TextColor="Black"/>
                     <Label Text="{Binding Phone}" FontSize="17"/>

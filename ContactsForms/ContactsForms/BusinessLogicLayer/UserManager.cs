@@ -20,18 +20,6 @@ namespace ContactsForms.BusinessLogicLayer {
             });
         }
 
-        public User GetUserAt(int index) {
-            return dataBase.users[index];
-        }
-
-        public int GetUsersCount() {
-            return dataBase.users.Count;
-        }
-
-        public List<User> GetUsers() {
-            return dataBase.users;
-        }
-
         private void FillAlphabeticallyGroupedUsers() {
             var dict = GetAlphabeticallySortedUsersDictionary();
             var listDataKeys = (new List<char>(dict.Keys));
@@ -45,7 +33,7 @@ namespace ContactsForms.BusinessLogicLayer {
             }
         }
 
-        public Dictionary<char, List<User>> GetAlphabeticallySortedUsersDictionary() {
+        private Dictionary<char, List<User>> GetAlphabeticallySortedUsersDictionary() {
             Dictionary<char, List<User>> res = new Dictionary<char, List<User>>();
 
             foreach (var user in dataBase.users) {

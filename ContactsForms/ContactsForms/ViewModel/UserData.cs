@@ -29,6 +29,12 @@ namespace ContactsForms {
             }
         }
 
+        public string FullTitledName {
+            get {
+                return $"{Name.UpperTitle} {Name.UpperFirst} {Name.UpperLast}";
+            }
+        }
+
         public string Serialize() {
             return JsonConvert.SerializeObject(this);
         }
