@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:local="clr-namespace:ContactsForms"
+             x:Class="ContactsForms.ContactsList"
+             Title="Контакты">
+    
+    <ContentPage.Content>
+        <ListView x:Name="listView" IsGroupingEnabled="True" ItemsSource="{Binding AlphabeticallyGroupedUsers}" GroupDisplayBinding="{Binding Title}" HasUnevenRows="True" ItemTapped="ListView_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding FullName}" TextColor="Black"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell Height="28">
+                        <ContentView Padding="16, 0, 0, 0">
+                            <Label Text="{Binding Title}" FontSize="17" FontAttributes="Bold" VerticalOptions="Center" VerticalTextAlignment="Center" />
+                        </ContentView>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+        </ListView>
+    </ContentPage.Content>
+
+</ContentPage>
