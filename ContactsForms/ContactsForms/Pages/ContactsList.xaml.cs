@@ -21,9 +21,19 @@ namespace ContactsForms {
             }
         }
 
+        Action<Exception> modelExceptionHandler;
+
         public ContactsList() {
             InitializeComponent();
-            Model = new UserManager();
+
+            modelExceptionHandler = async (e) => {
+                if (e != null) {
+                    await DisplayAlert("Ошибка", "Произошла ошибка при загрузке базы данных", "Повторить");
+                    Model = new UserManager(modelExceptionHandler);
+                }
+            };
+
+            Model = new UserManager(modelExceptionHandler);
         }
 
         private void ListView_ItemTapped(object sender, ItemTappedEventArgs e) {

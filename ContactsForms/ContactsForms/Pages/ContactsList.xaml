@@ -7,7 +7,7 @@
              Title="Контакты">
     
     <ContentPage.Content>
-        <ListView x:Name="listView" IsGroupingEnabled="True" ItemsSource="{Binding AlphabeticallyGroupedUsers}" GroupDisplayBinding="{Binding Title}" HasUnevenRows="True" ItemTapped="ListView_ItemTapped">
+        <ListView IsGroupingEnabled="True" ItemsSource="{Binding AlphabeticallyGroupedUsers}" GroupDisplayBinding="{Binding Title}" HasUnevenRows="True" ItemTapped="ListView_ItemTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding FullName}" TextColor="Black"/>
